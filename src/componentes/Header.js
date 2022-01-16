@@ -16,6 +16,7 @@ const Header = () => {
   );
 };
 
+//Se debe respetar la etiqueta, es una buena practica mas no necesariamente se debe de respetar
 const ContenedorHeader = styled.header`
   text-align: center;
   margin-bottom: 40px;
