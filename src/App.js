@@ -5,14 +5,15 @@ import Inicio from "./componentes/Inicio";
 import AcercaDe from "./componentes/AcerdaDe";
 import Blog from "./componentes/Blog";
 import Header from "./componentes/Header";
+import styled from "styled-components";
 
 function App() {
   return (
     // BrowserRouter debe contener adentro a toda la aplicacion para que pueda funcionar
     <BrowserRouter>
-      <div>
+      <ContenedorPrincipal>
         <Header />
-        <main>
+        <Main>
           {/* Dentro de 'routes' deben ir los 'route' sino no funciona */}
           <Routes>
             {/* Cada route es una ruta, con 'path' le indicamos el nombre de la ruta  */}
@@ -21,10 +22,23 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/acerca-de" element={<AcercaDe />} />
           </Routes>
-        </main>
-      </div>
+        </Main>
+      </ContenedorPrincipal>
     </BrowserRouter>
   );
 }
+
+const ContenedorPrincipal = styled.div`
+  padding: 40px;
+  width: 90%;
+  max-width: 700px;
+`;
+
+const Main = styled.main`
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(129, 129, 129, 0.1);
+`;
 
 export default App;
